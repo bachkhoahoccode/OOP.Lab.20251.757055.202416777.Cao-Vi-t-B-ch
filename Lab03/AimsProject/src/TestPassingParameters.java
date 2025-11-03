@@ -27,7 +27,7 @@ public class TestPassingParameters {
         dvd2 = temp;
     }
     public static void changeTitle(DigitalVideoDisc dvd, String title) {
-        String oldTitle = dvd.getTitle();
+        // String oldTitle = dvd.getTitle(); (also redundant as a result)
         dvd.setTitle(title);
         //dvd = new DigitalVideoDisc(oldTitle); (this is actually redundant tho??)
     }
