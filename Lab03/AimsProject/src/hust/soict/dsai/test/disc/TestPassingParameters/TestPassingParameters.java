@@ -1,3 +1,6 @@
+package hust.soict.dsai.test.disc.TestPassingParameters;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+
 public class TestPassingParameters {
     public static void main(String[] args) {
         DigitalVideoDisc jungledvd = new DigitalVideoDisc("Jungle");
