@@ -1,3 +1,4 @@
+//exercise 6.4
 import java.util.Scanner;
 public class DayMonthYear {
 
@@ -5,13 +6,15 @@ public class DayMonthYear {
         Scanner scanner = new Scanner(System.in);
         int month, year = -1;
         while (true) {
+            //enter month
             System.out.print("Enter month: ");
-            String monthInput = scanner.nextLine().trim();
+            String monthInput = scanner.nextLine().trim().toLowerCase();
             month = parseMonth(monthInput);
             if (month == -1) {
                 System.out.println("Invalid month. Please try again.");
                 continue;
             }
+            //enter year
             System.out.print("Enter year (AD, in full): ");
             String yearInput = scanner.nextLine().trim();
             if (!yearInput.matches("\\d+")) {
@@ -26,7 +29,7 @@ public class DayMonthYear {
             break;
         }
         int days = getDaysInMonth(month, year);
-        System.out.println("The month you type has" + days +"days");
+        System.out.println("The month you type has " + days +" days");
         scanner.close();
     }
 

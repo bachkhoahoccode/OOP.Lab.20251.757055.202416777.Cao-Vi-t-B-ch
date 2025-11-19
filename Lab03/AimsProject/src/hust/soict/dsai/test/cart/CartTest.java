@@ -1,8 +1,8 @@
-package hust.soict.dsai.test.cart.CartTest;
+package hust.soict.dsai.test.cart;
 import java.util.Scanner;
 
-import hust.soict.dsai.aims.cart.Cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 public class CartTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
