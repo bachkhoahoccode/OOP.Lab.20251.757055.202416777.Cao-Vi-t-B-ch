@@ -1,20 +1,19 @@
 package hust.soict.dsai.aims.disc;
-public class DigitalVideoDisc extends Media{
-
+import hust.soict.dsai.aims.media.Media;
+public class DigitalVideoDisc extends Media {
     private String director;
-    private int id;
-
+    private int length;
     private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
-        this.title = title;
+        setTitle(title);
         nbDigitalVideoDiscs++;
-        this.id = nbDigitalVideoDiscs;
+        setId(nbDigitalVideoDiscs);
     }
     public DigitalVideoDisc(String title, String category, float cost) {
         this(title);
-        this.category = category;
-        this.cost = cost;
+        setCategory(category);
+        setCost(cost);
     }
     public DigitalVideoDisc(String title, String category, String director, float cost) {
         this(title, category, cost);
@@ -28,14 +27,19 @@ public class DigitalVideoDisc extends Media{
     public String getDirector() {
         return director;
     }
-    public int getId() {
-        return this.id;
+    public void setDirector(String director) {
+        this.director = director;
+    }
+    public int getLength() {
+        return length;
+    }
+    public void setLength(int length) {
+        this.length = length;
     }
     public String toString() {
-        return "DVD - [" + title + "] - [" + category + "] - [" + director + "] - [" + length + ": [" + cost + "] $";
+        return "DVD - [" + getTitle() + "] - [" + getCategory() + "] - [" + director + "] - [" + length + ": [" + getCost() + "] $";
     }
     public boolean isMatch(String title) {
-        return this.title.equalsIgnoreCase(title);
-    }
-    
+        return getTitle().equalsIgnoreCase(title);
+    }    
 }
