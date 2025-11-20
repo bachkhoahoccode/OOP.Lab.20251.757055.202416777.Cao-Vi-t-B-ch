@@ -8,36 +8,21 @@ public class exercise2_2_5{
          "Chào",
           JOptionPane.INFORMATION_MESSAGE
           );
-        double[] input = getInput();
+        double[] input = new double[2];
+        input[0] = getInput("nhất");
+        input[1] = getInput("hai");
         String result = calculateInput(input[0], input[1]);
         JOptionPane.showMessageDialog(null, result,
          "Kết quả", JOptionPane.INFORMATION_MESSAGE);
     }
-    public static double[] getInput(){   
-        double num1 = 0, num2 = 0;
+    public static double getInput(String order){   
+        double num = 0.0;
         while(true){
-            String strNum1 = JOptionPane.showInputDialog(null,
-         "Nhập số thực thứ nhất:");
-         if (strNum1 == null) {
-        JOptionPane.showMessageDialog(null, "Bái bai!");
-        System.exit(0);}
+            String strNum = JOptionPane.showInputDialog(null,
+            "Nhập số thực thứ " + order +" :");
             try {
-                num1 = Double.parseDouble(strNum1);
-                break;
-            }   catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null,
-                 "Giá trị nhập vào không hợp lệ. Vui lòng nhập lại.",
-                  "Lỗi", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        while(true){
-            String strNum2 = JOptionPane.showInputDialog(null,
-         "Nhập số thực thứ hai:");
-            if (strNum2 == null) { JOptionPane.showMessageDialog(null, "Bái bai!");
-        System.exit(0);}
-            try {
-                num2 = Double.parseDouble(strNum2);
-                if(num2 == 0.0){
+                num = Double.parseDouble(strNum);
+                if (order.equals("hai") && num == 0.0) {
                     int response = JOptionPane.showConfirmDialog(null,
                  "Mẫu số hiện bằng 0, vẫn tiếp tục?",
                   "Xác nhận",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -45,15 +30,17 @@ public class exercise2_2_5{
                      continue;
                 }
                 break;
-            }   catch (NumberFormatException e){
+            }             
+            catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null,
                  "Giá trị nhập vào không hợp lệ. Vui lòng nhập lại.",
-                  "Lỗi", JOptionPane.ERROR_MESSAGE);}
-            }
-        return new double[]{num1, num2};
+                  "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }   
+        }
+        return num;
     }
+    
     private static String calculateInput(double num1, double num2){
-
         double sum = num1 + num2;
         double difference = num1 - num2;
         double product = num1 * num2;
