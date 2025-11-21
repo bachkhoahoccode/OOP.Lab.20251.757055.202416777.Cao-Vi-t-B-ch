@@ -1,13 +1,14 @@
 package hust.soict.dsai.aims.cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
-
+import hust.soict.dsai.aims.media.Media;
+import java.util.ArrayList;
 public class Cart {
-    public static final int MAX_NUMBERS_ORDERED = 20;
-    private DigitalVideoDisc[] itemsOrdered = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-    private int qtyOrdered = 0;
-    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
-        if (qtyOrdered < MAX_NUMBERS_ORDERED) {
-            itemsOrdered[qtyOrdered] = disc;
+    //public static final int MAX_NUMBERS_ORDERED = 20;
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    //qtyOrdered = 0;
+
+    public void addMedia(Media media) {
+        if (!itemsOrdered.contains(media)) {
+            itemsOrdered.add(media);
             qtyOrdered++;
             System.out.println("The disc has been added");
         } else {

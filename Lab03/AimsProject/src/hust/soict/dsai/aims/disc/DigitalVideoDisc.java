@@ -1,41 +1,31 @@
 package hust.soict.dsai.aims.disc;
-import hust.soict.dsai.aims.media.Media;
-public class DigitalVideoDisc extends Media {
+import hust.soict.dsai.aims.media.Disc;
+public class DigitalVideoDisc extends Disc {
     private String director;
     private int length;
     private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
-        setTitle(title);
+        super(title);
         nbDigitalVideoDiscs++;
         setId(nbDigitalVideoDiscs);
     }
     public DigitalVideoDisc(String title, String category, float cost) {
-        this(title);
-        setCategory(category);
-        setCost(cost);
+        super(title, category, cost);
+        nbDigitalVideoDiscs++;
+        setId(nbDigitalVideoDiscs);
     }
     public DigitalVideoDisc(String title, String category, String director, float cost) {
-        this(title, category, cost);
-        this.director = director;
+        super(title, category, director, cost);
+        nbDigitalVideoDiscs++;
+        setId(nbDigitalVideoDiscs);
     }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this(title,category,director,cost);
-        this.length = length;
+        super(title, category, director, length, cost);
+        nbDigitalVideoDiscs++;
+        setId(nbDigitalVideoDiscs);
     }
     
-    public String getDirector() {
-        return director;
-    }
-    public void setDirector(String director) {
-        this.director = director;
-    }
-    public int getLength() {
-        return length;
-    }
-    public void setLength(int length) {
-        this.length = length;
-    }
     public String toString() {
         return "DVD - [" + getTitle() + "] - [" + getCategory() + "] - [" + director + "] - [" + length + ": [" + getCost() + "] $";
     }
